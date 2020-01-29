@@ -40,14 +40,12 @@
                                 {
                                     Title = Title + jsonObj.book[i].Title + "<br>";
                                     Author = Author + jsonObj.book[i].Author + "<br>";
-                                    extra = extra + jsonObj.book[i].extra + "<p>" + jsonObj.book[i].Description + "</p>";
                                     var selection = i;
                                     console.log(i);
                                 }
-                            
                         }
-                        console.log(selection + "using my code");
-                        document.getElementById("booklist").innerHTML = extra;
+                        console.log(selection + "Using my code");
+                        document.getElementById("booklist").innerHTML = "";
                         document.getElementById("Title").innerHTML = Title;
                         document.getElementById("Author").innerHTML = Author;
                     }
@@ -96,13 +94,12 @@
                                     Author = Author + jsonObj.book[i].Author + "<br>";
                                     var selection = i;
                                     console.log(i);
-                                }
-                            
+                                }       
                         }
                         console.log(selection + "Using my code");
                         document.getElementById("booklist").innerHTML = "";
                         document.getElementById("Title").innerHTML = Title;
-                        document.getElementById("Author").innerHTML = Author;
+                        document.getElementById("Author").innerHTML = Author; 
                     }
                 }
                 http_request.open("GET", data_file, true);
@@ -163,9 +160,7 @@
                     var jsonObj = JSON.parse(http_request.responseText);
                     var text = "<option value='0'>--</option>";
                     for (var i = 0; i < jsonObj.book.length; i++) {
-                        text = text + "<option value = '"+ jsonObj.book[i].id
-                            + "'> "+ jsonObj.book[i].Title +"</option>"; 
-                       
+                        text = text + "<option value = '"+ jsonObj.book[i].id +"'> "+ jsonObj.book[i].Title +"</option>"; 
                     }
                     document.getElementById("BookSel").innerHTML = text;
                 }
