@@ -29,19 +29,31 @@ function drpJSON() {
             // be accessed as jsonObj.name and jsonObj.country.
             var name = "";
             var lname = "";
-            var extra = "";
+            var relation = "";
             for (var i = 0; i < jsonObj.people.length; i++) {
-                if (document.getElementById("Namelist").value != 0)
+                if (document.getElementById("Namelist").value == 0)
+                {
+                    name = name + jsonObj.people[i].name + "<br>";
+                    lname = lname + jsonObj.people[i].lname + "<br>";
+                    relation = relation + jsonObj.people[i].relation + "<br>";
+                    console.log(i);
+                }
+
+                else if (jsonObj.people[i].name != document.getElementById("Namelist").value)
                     {
-                        name = name + jsonObj.people[i].name + "<br>";
-                        lname = lname + jsonObj.people[i].lname + "<br>";
-                        var selection = i;
-                        console.log(i);
+                        if (jsonObj.people[i].relation == document.getElementById("Namelist").options[document.getElementById("Namelist").selectedIndex].text)
+                            {
+                            name = name + jsonObj.people[i].name + "<br>";
+                            lname = lname + jsonObj.people[i].lname + "<br>";
+                            relation = relation + jsonObj.people[i].relation + "<br>";
+                            console.log(i);
+                            }
                     }
             }
-            document.getElementById("peoplelist").innerHTML = "";
+            document.getElementById("refresh").innerHTML = "";
             document.getElementById("Name").innerHTML = name;
             document.getElementById("Last Name").innerHTML = lname;
+            document.getElementById("Relation").innerHTML = relation;
         }
     }
     http_request.open("GET", data_file, true);
@@ -80,19 +92,35 @@ function wrtJSON() {
             // be accessed as jsonObj.name and jsonObj.country.
             var name = "";
             var lname = "";
-            var extra = "";
+            var relation = "";
             for (var i = 0; i < jsonObj.people.length; i++) {
-                if (jsonObj.people[i].lname.indexOf(document.getElementById("FullName").value) > -1 && document.getElementById("FullName").value != "")
+                if (((jsonObj.people[i].lname).toLowerCase()).indexOf((document.getElementById("FullName").value).toLowerCase()) > -1 || ((jsonObj.people[i].name).toLowerCase()).indexOf((document.getElementById("FullName").value).toLowerCase()) > -1 && document.getElementById("FullName").value != "")
                     {
-                        name = name + jsonObj.people[i].name + "<br>";
-                        lname = lname + jsonObj.people[i].lname + "<br>";
-                        var selection = i;
-                        console.log(i);
+                        if (document.getElementById("Namelist").options[document.getElementById("Namelist").selectedIndex].text != "--")
+                        {
+                            if (jsonObj.people[i].relation == document.getElementById("Namelist").options[document.getElementById("Namelist").selectedIndex].text)
+                            {
+                                name = name + jsonObj.people[i].name + "<br>";
+                                lname = lname + jsonObj.people[i].lname + "<br>";
+                                relation = relation + jsonObj.people[i].relation + "<br>";
+                                var selection = i;
+                                console.log(i);
+                            }
+                        }
+                        else
+                        {
+                            name = name + jsonObj.people[i].name + "<br>";
+                            lname = lname + jsonObj.people[i].lname + "<br>";
+                            relation = relation + jsonObj.people[i].relation + "<br>";
+                            var selection = i;
+                            console.log(i);
+                        }
                     }       
             }
-            document.getElementById("peoplelist").innerHTML = "";
+            document.getElementById("refresh").innerHTML = "";
             document.getElementById("Name").innerHTML = name;
             document.getElementById("Last Name").innerHTML = lname; 
+            document.getElementById("Relation").innerHTML = relation;
         }
     }
     http_request.open("GET", data_file, true);
@@ -123,10 +151,21 @@ http_request.onreadystatechange = function () {
     if (http_request.readyState == 4) {
         // Javascript function JSON.parse to parse JSON data
         var jsonObj = JSON.parse(http_request.responseText);
+        let totalrelations = [];
         var text = "<option value='0'>--</option>";
-        for (var i = 0; i < jsonObj.people.length; i++) {
-            text = text + "<option value = '"+ jsonObj.people[i].id +"'> "+ jsonObj.people[i].name +"</option>"; 
-        }
+        for (var i = 0; i < jsonObj.people.length; i++) {   
+            x = totalrelations.indexOf(jsonObj.people[i].relation)
+            console.log(totalrelations.indexOf(jsonObj.people[i].relation))
+            if (x == -1)
+                {
+                totalrelations.push(jsonObj.people[i].relation);
+                }    
+            }
+        totalrelations.forEach(element => {
+            text = text + "<option value = '"+ element +"'> "+ element +"</option>"; 
+        });
+
+        console.log(text)
         document.getElementById("Namelist").innerHTML = text;
     }
 }
