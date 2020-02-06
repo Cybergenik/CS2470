@@ -1,3 +1,54 @@
+//Populate table on load of page
+window.onload = function() {
+    function myFunction() {
+        var data_file = "FriendsAndFamily.json";
+        var http_request = new XMLHttpRequest();
+        try {
+            // Opera 8.0+, Firefox, Chrome, Safari
+            http_request = new XMLHttpRequest();
+    
+        } catch (e) {
+            // Internet Explorer Browsers
+            try {
+                http_request = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                try {
+                    http_request = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (e) {
+                    // Something went wrong
+                    alert("Your browser broke!");
+                    return false;
+                }
+            }
+        }
+        http_request.onreadystatechange = function () {
+            if (http_request.readyState == 4) {
+                // Javascript function JSON.parse to parse JSON data
+                var jsonObj = JSON.parse(http_request.responseText);
+    
+                // jsonObj variable now contains the data structure and can
+                // be accessed as jsonObj.name and jsonObj.country.
+                var name = "";
+                var lname = "";
+                var relation = "";
+                for (var i = 0; i < jsonObj.people.length; i++) {
+                        name = name + jsonObj.people[i].name + "<br>";
+                        lname = lname + jsonObj.people[i].lname + "<br>";
+                        relation = relation + jsonObj.people[i].relation + "<br>";
+                        console.log(i);
+                    }
+                }
+                document.getElementById("Name").innerHTML = name;
+                document.getElementById("Last Name").innerHTML = lname;
+                document.getElementById("Relation").innerHTML = relation;
+            }
+        
+            http_request.open("GET", data_file, true);
+            http_request.send();
+        }
+    myFunction();
+};
+
 //change on the drop down
 function drpJSON() {
     var data_file = "FriendsAndFamily.json";
