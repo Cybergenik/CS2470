@@ -38,5 +38,13 @@
         {"name":"Arthur",
         "lname":"Keensley",
             "relation":"Friend"            
+        },
+        {"name":"Carlos",
+        "lname":"Garcia",
+            "relation":"Cousin"            
+        },
+        {"name":"Matt",
+        "lname":"Berven",
+            "relation":"Friend"            
         }]
 }
