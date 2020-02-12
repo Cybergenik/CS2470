@@ -34,6 +34,7 @@
         </script>
 </head>
 <body>
-    
+    <h1> In Class 4.</h1>
+    <p>Added the the scripts correctly</p>
 </body>
 </html>
