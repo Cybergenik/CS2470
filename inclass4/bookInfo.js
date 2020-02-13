@@ -5,9 +5,9 @@
  */
 
 
-function bookinfo(t) {
-    console.log(t);
-    var data_file = "products.json";
+function activityinfo(t) {
+    console.log(x);
+    var data_file = "things.json";
     var http_request = new XMLHttpRequest();
 
     try {
@@ -35,17 +35,15 @@ function bookinfo(t) {
 
             // jsonObj variable now contains the data structure and can
             // be accessed as jsonObj.name and jsonObj.country.
-            var text = "";
-            for (var i = 0; i < jsonObj.book.length; i++) {
-                if (jsonObj.book[i].id == t) {
-                    text = text + jsonObj.book[i].Title + " " + jsonObj.book[i].Author + "<br>"+jsonObj.book[i].desc;
-                    var selection = i;
+            z = jsonObj.things[t].information;
+            x = document.getElementById("things").style.zIndex; 
+            console.log(x)
+            for (var i = 0; i < jsonObj.things.length; i++) {
+                if (document.getElementById("things").style.zIndex == 7) {
+                    document.getElementById("information").innerHTML = jsonObj.things[i].desc;
                 }
-
             }
-            console.log(selection);
-            document.getElementById("information").innerHTML = text;
-
+            document.getElementById("information").innerHTML = "hello";
         }
     }
     http_request.open("GET", data_file, true);
