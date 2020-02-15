@@ -3,36 +3,42 @@
             "Activity": "Gaming",
             "Source":"images/gaming.png",
             "desc": "I've been a gamer since I can remember, I love playing games on PC. The games I currently play are Overwatch, TF2, and Rust. ",
-            "information": 0
+            "information": 0,
+            "info": "\"A gamer is someone who doesn't just play games for fun, or a sense of superiority when pit against his peers. A gamer is someone who plays because it means something more to him than just that. -Gianbomb.com\""
         },
         {
             "Activity": "Programming",
             "Source":"images/programming.png",
             "desc": "I taught myself python when I was 15 and ever since then I've loved programming, this combined with my love of Linux I've done a bunch of projects and programs.",
-            "information": 1        
+            "information": 1,
+            "info": "\"Computer programming is little more than a set of instructions to facilitate specific actions. Computer programmers create instructions for a computer to act upon by writing and testing code to enable applications and software programs to operate successfully. -SNHU.edu\""       
         },
         {
             "Activity": "Snowboarding",
             "Source":"images/snowboarding.png",
             "desc": "When I used to live in California I used to go snowboarding all the time, and since I moved to Utah I've loved going snowboarding. It's always a lot of fun.",
-            "information": 2       
+            "information": 2,
+            "info": "\"Snowboarding is a winter sport that involves descending a slope that is covered with snow while standing on a board attached to a rider's feet, using a special boot set onto a mounted binding. -skicanada.org\""    
         },
         {
             "Activity": "Linux",
             "Source":"images/linux.png",
             "desc": "Booted Linux when I was 14, since then I've been changing distro and partaking in different Linux forums looking for the best distro ever made (still not found it). I use Linux on my personal laptop and for schoool.",
-            "information": 3        
+            "information": 3,
+            "info": "\"Linux is a family of open source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991, by Linus Torvalds. -wikipedia.org\""      
         },
         {
             "Activity": "Coffee",
             "Source":"images/coffee.png",
             "desc": "Maybe this is a bit unhealthy but I love drinking coffee, I will usually have at least a cup a day. I started drinking coffee when I was younger, it was a traditional drink in my family and ",
-            "information": 4        
+            "information": 4,
+            "info": "\"Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffea species. ... Once ripe, coffee berries are picked, processed, and dried. -wikipedia.org\""      
         },
         {
             "Activity": "Politics",
             "Source":"images/politics.png",
             "desc": "I had my own politics club in High School and I love learning and talking about politics. I like to stay up to date with what's happening in the world.",
-            "information": 0        
+            "information": 5,
+            "info": "\"Politics is the way that people living in groups make decisions. Politics is about making agreements between people so that they can live together in groups such as tribes, cities, or countries. ... The study of politics in universities is called political science, political studies, or public administration. -wikipedia.org\""       
         }]
 }

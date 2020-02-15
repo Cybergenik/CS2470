@@ -6,7 +6,7 @@
 
 
 function activityinfo(t) {
-    console.log(x);
+    console.log(t);
     var data_file = "things.json";
     var http_request = new XMLHttpRequest();
 
@@ -35,15 +35,10 @@ function activityinfo(t) {
 
             // jsonObj variable now contains the data structure and can
             // be accessed as jsonObj.name and jsonObj.country.
-            z = jsonObj.things[t].information;
-            x = document.getElementById("things").style.zIndex; 
-            console.log(x)
-            for (var i = 0; i < jsonObj.things.length; i++) {
-                if (document.getElementById("things").style.zIndex == 7) {
-                    document.getElementById("information").innerHTML = jsonObj.things[i].desc;
-                }
-            }
-            document.getElementById("information").innerHTML = "hello";
+            // We then pass the id given, as the position of the subobject and get the perspective information.
+            info = jsonObj.things[t].info;
+            console.log(info)
+            document.getElementById("information" + t).innerHTML = "<i>Info:<br>"+ info +"</i>";
         }
     }
     http_request.open("GET", data_file, true);
