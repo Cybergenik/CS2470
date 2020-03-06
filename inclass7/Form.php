@@ -9,6 +9,7 @@
     <title>Form</title>
     <script>
         $(document).ready(function () {
+            //Accordion
             $('#accordion').accordion({
                 active: false,
                 collapsible: true
@@ -18,7 +19,8 @@
             var max_fields = 5; //Maximum allowed input fields 
             var wrapper    = $(".wrapper"); //Input fields wrapper
             var addButton = $(".addButton"); //Add button class or ID
-
+            
+            //Dynamic List
             $("#addButton").click(function (e) {
                 e.preventDefault();
                 //Check maximum allowed input fields
