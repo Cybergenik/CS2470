@@ -1,0 +1,30 @@
+{
+    "things": [{
+            "Activity": "World of Warcraft",
+            "Source":"images/wow.jpg",
+            "desc": "I've been playing WoW since my older brother showed me the game in the summer of 2012. I've mostly focused on playing PvP, I've hit Gladiator 7 times in MoP and WoD, and hit rank 1 one time when I played fire mage in WoD with RMP. ",
+            "information": 0,
+            "info": "\"World of Warcraft is a massively multiplayer online role-playing game released in 2004 by Blizzard Entertainment. It is the fourth released game set in the Warcraft fantasy universe. -Wikipedia\""
+        },
+        {
+            "Activity": "Overwatch",
+            "Source":"images/ow.jpg",
+            "desc": "I started playing Overwatch since it came out in 2016, I played a lot in the early seasons achieving GrandMaster on 4 consecutive seasons and top 500 on a few occasions. However the game has gone down hill since its inception.",
+            "information": 1,
+            "info": "\"Overwatch is a team-based multiplayer first-person shooter developed and published by Blizzard Entertainment. -Wikipedia\""       
+        },
+        {
+            "Activity": "League of Legends",
+            "Source":"images/lol.jpg",
+            "desc": "I started playing League of Legens in 2014 when my school friends introduced me to it and my brother and my cousins started playing. I mostly play this game casually because I usually don't like playing ranked, but I play norms and I've been playing Lee Sin Jungle since season 4.",
+            "information": 2,
+            "info": "\"League of Legends is a multiplayer online battle arena video game developed and published by Riot Games for Microsoft Windows and macOS. Inspired by the Warcraft III: The Frozen Throne mod Defense of the Ancients, the game follows a freemium model and is supported by microtransactions. -Wikipedia\""    
+        },
+        {
+            "Activity": "Rust",
+            "Source":"images/rust.jpg",
+            "desc": "Rust is an amazing game, its by far the best survival game I've ever played. I have about 1000 hours in this game, I love every part of it. From its unapologetic developers, the fun and yet quite tryhard player-base, and the gunplay and combat.",
+            "information": 3,
+            "info": "\"Rust is a multiplayer-only survival video game developed by Facepunch Studios. Rust was first released in early access in December 2013 and received its full release in February 2018. Rust is available on Microsoft Windows and macOS. -Wikipedia\""      
+        }]
+}

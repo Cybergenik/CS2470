@@ -14,7 +14,6 @@
                 active: false,
                 collapsible: true
             });
-            if ($())
             var x = 1;
             var max_fields = 5; //Maximum allowed input fields 
             var wrapper    = $(".wrapper"); //Input fields wrapper
@@ -68,14 +67,6 @@
                 <div class="wrapper">
                     <div><input type="text" class='myin2' name="hobby" placeholder="hobbie" /></div>
                 </div><br><br><br><br><br>
-                <!--
-            <ul id="list">
-                <li class="hobby-list" id="entry0">HELLO</li><button class="rmButton" id="entry0">X</button><br>
-                <li class="hobby-list" id="entry0">HELLO</li><button class="rmButton" id="entry0">X</button><br>
-                <li class="hobby-list" id="entry0">HELLO</li><button class="rmButton" id="entry0">X</button><br>
-
-            </ul>
-            -->
         </div>
         <label class="mybutton">Music</label>
         <div>
