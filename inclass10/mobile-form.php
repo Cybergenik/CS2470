@@ -25,7 +25,7 @@
                 if(x < max_fields){ 
                     x++; //input field increment
                     //add input field
-                    $(wrapper).append('<div><input type="text" class="myin2" name="hobby" placeholder="hobbie" /> <a href="javascript:void(0);" class="remove_field">Remove</a></div>');
+                    $(wrapper).append('<div><input style="color: #151D21;" type="text" class="myin2" name="hobby" placeholder="hobbie" /> <a href="javascript:void(0);" class="remove_field">Remove</a></div>');
                 }
             });
             $(wrapper).on("click",".remove_field", function(e){ 
@@ -65,7 +65,7 @@
             <div id="hobbies" class="collapse">
                     <button class="mybutton" id="addButton" style="position: relative; ">Add</button>            
                     <div class="wrapper">
-                        <div><input type="text" class='myin2' name="hobby" placeholder="hobbie" /></div>
+                        <div><input style="color: #151D21;" type="text" class='myin2' name="hobby" placeholder="hobbie" /></div>
                     </div>
             </div>
             <button type="button" class="mybutton" data-toggle="collapse" data-target="#music">Music</button>
