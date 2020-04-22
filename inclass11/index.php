@@ -15,9 +15,49 @@ and open the template in the editor.
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script>
+            
             $(document).ready(function () {
+                //modal init
+                $('#tweet-modal').modal();
+                //char counter
+                var $charCount, maxCharCount;
+
+                $charCount = $('#tweet-modal .char-count')
+                maxCharCount = parseInt($charCount.data('max'), 10);
+
+                $('#tweet-modal textarea').on('keyup', function (e) {
+                    var tweetLength = $(e.currentTarget).val().length;
+
+                    $charCount.html(maxCharCount - tweetLength);
+                });
                 //tool tipper
                 $('[data-toggle="tooltip"]').tooltip();
+
+                //pop over
+                $('[data-toggle="popover"]').popover({
+                    placement: 'bottom',
+                    html: true,
+                    content: function () {
+                        return popoverContentTemplate;
+                    }
+                });
+
+                var popoverContentTemplate = '' +
+                        '<img src="imgs/dude.png" class="img-rounded">' +
+                        '<div class="info">' +
+                        '<strong>Michael</strong>' +
+                        '<a href="#" class="btn btn-default">' +
+                        '<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>' +
+                        'Follow' +
+                        '</a>' +
+                        '</div>';
+
+                $('[data-toggle="popover"]').on('show.bs.popover', function () {
+                    var $icon = $(this).find('span.glyphicon');
+
+                    $icon.removeClass('glyphicon-plus').addClass('glyphicon-ok');
+                    $(this).append('ing');
+                });
 
                 //profile
                 $('#profile').on('affix.bs.affix', function () {
@@ -28,7 +68,6 @@ and open the template in the editor.
                     $('#main').removeClass('col-md-offset-3');
                 });
             });
-
         </script>
     </head>
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -256,17 +295,17 @@ and open the template in the editor.
             </div>
         </div>
     </body>
-    <div class="modal fade" id="tweet-modal" tabindex="-1" role="dialog">
+    <div class="modal fade" id="tweet-modal" tabindex="-1" role="dialog" style="display: none;">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true">×</span>
                     </button>
-                    <h4 class="modal-title">Modal title</h4>
+                    <h4 class="modal-title">Post</h4>
                 </div>
                 <div class="modal-body">
-                    <textarea class="form-control" rows="4" placeholder="What will you say?" maxlength="140"></textarea>
+                    <textarea class="form-control" rows="4" placeholder="Say something" maxlength="140"></textarea>
                 </div>
                 <div class="modal-footer">
                     <span class="char-count pull-left" data-max="140">140</span>
@@ -274,7 +313,7 @@ and open the template in the editor.
                         Close
                     </button>
                     <button type="button" class="btn btn-primary">
-                        Save changes
+                        Post
                     </button>
                 </div>
             </div>
